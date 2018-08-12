@@ -12,9 +12,13 @@ You can clone the project
 
 ## User urls
 
-   1. [Login Form]()
-   2. [Create request Form]()
-   3. [Sign up Form]()
+   1. [Login Form](https://bozicschucky.github.io/AndelaWeekOne/login.html)
+   2. [Sign up Form](https://bozicschucky.github.io/AndelaWeekOne/signup.html)
+   3. [Post Question ](https://bozicschucky.github.io/AndelaWeekOne/post.html)
+   4. [User Profile](https://bozicschucky.github.io/AndelaWeekOne/profile.html)
+   5. [Post Answer Form](https://bozicschucky.github.io/AndelaWeekOne/post_answer.html)
+   6. [Accept Answer Form](https://bozicschucky.github.io/AndelaWeekOne/accept_answer.html)
+   7. [Delete Answer Form](https://bozicschucky.github.io/AndelaWeekOne/delete.html)
 
 
 
