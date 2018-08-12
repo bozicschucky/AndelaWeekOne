@@ -45,3 +45,51 @@ main{
     justify-content: flex-end;
     margin: auto;
 }
+
+
+label{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input{
+    size: 30px;
+    padding: 20px;
+    background-color: rgb(255,255,255);
+    background-size: auto;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(203,219,219);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(203,219,219);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(203,219,219);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-color: rgb(203,219,219);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+
+/* Buttons for the website */
+.btn{
+    margin: 20px;
+    margin-left:0; 
+    width: 42%;
+    color: white;
+    padding: 18px;
+    background: rgb(12, 100, 26);
+    border: #000;
+}
+
+.btn:hover{
+    background: #000;
+    outline-color: beige;
+}
