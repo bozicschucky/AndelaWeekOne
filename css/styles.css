@@ -93,3 +93,36 @@ input{
     background: #000;
     outline-color: beige;
 }
+
+
+/* user profile */
+.user{
+    width: 80%;
+    margin-left:30%;
+    display: flex;
+}
+
+.user_question_header{
+    font-size: 20px;
+}
+.recent_question{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.user_details{
+    /* align-content: flex-end; */
+
+}
+
+.page_footer{
+    background-color: #24292e;
+    color: antiquewhite;
+    padding: 0.5rem;
+}
+
+.page_footer_login{
+    background-color: #24292e;
+    margin-top: 220px;
+    padding: 0.6rem;
+}
