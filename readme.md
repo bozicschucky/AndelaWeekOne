@@ -7,7 +7,7 @@ You can clone the project
 (link)
 
 # Project Link
- Visit [Maintenance Tracker App]()
+ Visit [StackOverFlow-Lite](https://bozicschucky.github.io/AndelaWeekOne/)
 
 
 ## User urls
