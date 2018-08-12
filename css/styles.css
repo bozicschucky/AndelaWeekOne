@@ -103,12 +103,36 @@ input{
     background: red;
     outline-color: beige;
 }
-
-.upvote:hover{
-    background: yellowgreen;
+.upvote{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #4CAF50;
+    color: green;
 }
+
+.upvote:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.downvote{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #2196F3;
+    color: dodgerblue
+}
+
 .downvote:hover{
-    background: rgb(10, 114, 139);
+    border-color: #ff9800;
+    color: orange;
 }
 
 /* user profile */
