@@ -126,9 +126,8 @@ input{
     margin-right: 10%;
 }
 
-.user_details{
-    /* align-content: flex-end; */
-
+.user_holder{
+    display: flex;
 }
 
 .page_footer{
@@ -141,4 +140,10 @@ input{
     background-color: #24292e;
     margin-top: 220px;
     padding: 0.6rem;
+}
+
+/*images on the profile page*/
+.image{
+    padding: 20px;
+    margin-bottom: 10px;
 }
