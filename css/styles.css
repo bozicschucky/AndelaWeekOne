@@ -94,6 +94,21 @@ input{
     outline-color: beige;
 }
 
+.btn-delete{
+    background:grey;
+}
+
+.btn-delete:hover{
+    background: red;
+    outline-color: beige;
+}
+
+.upvote:hover{
+    background: yellowgreen;
+}
+.downvote:hover{
+    background: rgb(10, 114, 139);
+}
 
 /* user profile */
 .user{
