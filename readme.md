@@ -41,5 +41,5 @@ You can clone the project
 # Authors
  - Sekito charles
 
-# Licensing
+# License
 MIT
