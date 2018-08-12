@@ -53,6 +53,10 @@ label{
     padding-bottom: 10px;
 }
 
+a{
+    text-decoration: none;
+}
+
 input{
     size: 30px;
     padding: 20px;
@@ -164,6 +168,10 @@ input{
     background-color: #24292e;
     margin-top: 220px;
     padding: 0.6rem;
+}
+
+.accept{
+    margin-top: 12px;
 }
 
 /*images on the profile page*/
