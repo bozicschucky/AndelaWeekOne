@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <title>welcome</title>
+    <title>Accept</title>
 </head>
 <body>
     <nav>
@@ -23,33 +23,44 @@
         <form action="" class="main-form">
                 <div class="question">
                     <h1>Question 4</h1>
-                    <h2>How do i fix bug x</h2>
+                    <h2>What is a plain English explanation of “Big O” notation?</h2>
                     <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Totam, earum facere. Alias sunt modi, soluta ipsa ab dolorum sed quaerat consectetur natus fugiat suscipit, autem non assumenda debitis similique veritatis?
+                    I'd prefer as little formal definition as possible and simple mathematics.
                     </p> 
                     </div>
                     <h3>Posted Answers</h3>
                     <div class="posted_anwsers">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, quasi perspiciatis delectus ab dolorem veritatis dolor sapiente quos consequatur at provident cum omnis maxime, minus blanditiis aut. Unde, dolor dolorum!</p>
+                        <p>Quick note, this is almost certainly confusing Big O notation (which is an upper bound) with Theta notation (which is a two-side bound). In my experience this is actually typical of discussions in non-academic settings. Apologies for any confusion caused. <br>There are some important and deliberately chosen words in that sentence:</p>
                         <div class="">
                             <button type="button" class="btn">Accept</button>
                         </div>
                     </div>
                         <div class="posted_anwsers">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, quasi perspiciatis delectus ab dolorem veritatis dolor sapiente quos consequatur at provident cum omnis maxime, minus blanditiis aut. Unde, dolor dolorum!</p>
+                        <p>Big-O notation (also called "asymptotic growth" notation) is what functions "look like" when you ignore constant factors and stuff near the origin. We use it to talk about how thing scale.</p>
                         <div class="">
                             <button type="button" class="btn">Accept</button>
                         </div>
                     </div>
                         <div class="posted_anwsers">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, quasi perspiciatis delectus ab dolorem veritatis dolor sapiente quos consequatur at provident cum omnis maxime, minus blanditiis aut. Unde, dolor dolorum!</p>
+                        <p>
+                            Big-O notation (also called "asymptotic growth" notation) is what functions "look like" when you ignore constant factors and stuff near the origin. We use it to talk about how thing scale.
+
+                            Basics
+
+                            for "sufficiently" large inputs...
+
+                            f(x) ∈ O(upperbound) means f "grows no faster than" upperbound
+                            f(x) ∈ Ɵ(justlikethis) mean f "grows exactly like" justlikethis
+                            f(x) ∈ Ω(lowerbound) means f "grows no slower than" lowerbound
+                            big-O notation doesn't care about constant factors: the function 9x² is said to "grow exactly like" 10x². Neither does big-O asymptotic notation care about non-asymptotic stuff ("stuff near the origin" or "what happens when the problem size is small"): the function 10x² is said to "grow exactly like" 10x² - x + 2.</p>
                         <div class="">
                             <button type="button" class="btn">Accept</button>
                         </div>
                     </div>
                         <div class="posted_anwsers">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, quasi perspiciatis delectus ab dolorem veritatis dolor sapiente quos consequatur at provident cum omnis maxime, minus blanditiis aut. Unde, dolor dolorum!</p>
+                            <p>As a purely mathematical construct, big-O notation is not limited to talking about processing time and memory. You can use it to discuss the asymptotics of anything where scaling is meaningful, such as:
+
+                            the number of possibly handshakes among N people at a party (Ɵ(N²), specifically N(N-1)/2, but what matters is that it "scales like" N²)</p>
                         <div class="">
                             <button type="button" class="btn">Accept</button>
                         </div>

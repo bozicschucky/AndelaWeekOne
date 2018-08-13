@@ -11,9 +11,9 @@
 <body>
     <nav>
         <ul class="nav-bar">
-            <li><a href="index.html">MiniOverFlow</a></li>
+            <li><a href="#">MiniOverFlow</a></li>
             <li><a href="signup.html">Sign Up</a></li>
-            <li><a href="post_answer.html">Answers</a></li>
+            <!-- <li><a href="post_answer.html">Answers</a></li> -->
             <!-- <li><a href="post.html">post</a></li> -->
             <!-- <li id="" class="signout"><a href="#">Signout</a></li> -->
         </ul>
@@ -23,9 +23,9 @@
         <form action="index.html" class="main-form">
             <h1 class="form-head">Login</h1>
             <label for="">Username</label>
-            <input type="text" name="username" id="username" placeholder="username">
+            <input type="text" name="username" id="username" placeholder="username" required>
             <label for="">Password</label>
-            <input type="text" name="password" id="password" placeholder="password">
+            <input type="text" name="password" id="password" placeholder="password" required minlength="6" maxlength="6>
             <p>Don't have an account?<a href="signup.html"> Register</a></p>
             <button class="btn">Login</button>
         </form>

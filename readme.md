@@ -7,7 +7,7 @@ You can clone the project
 (link)
 
 # Project Link
- Visit [StackOverFlow-Lite](https://bozicschucky.github.io/AndelaWeekOne/)
+ Visit [StackOverFlow-Lite](https://bozicschucky.github.io/AndelaWeekOne/signup.html)
 
 
 ## User urls
