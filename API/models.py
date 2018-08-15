@@ -36,3 +36,8 @@ class DbHandler():
         answers = {'answer': data}
         question = self.get(_id)
         question.update(answers)
+
+    def delete(self, _id):
+        ''' Deletes a question asked on the api '''
+        question = self.get(_id)
+        self.questions.remove(question)
