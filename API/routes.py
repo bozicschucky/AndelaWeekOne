@@ -24,4 +24,7 @@ class AllQuestions(Resource):
         questions = HANDLER.get_all()
         return questions
 
-
+    @api.expect(QUESTION)
+    def post(self):
+        """ Create a specific question """
+        return HANDLER.create(api.payload), 200
