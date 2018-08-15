@@ -23,3 +23,10 @@ class DbHandler():
     def get_all(self):
         ''' Returns all the questions stored in the data structure '''
         return self.questions
+
+    def create(self, data):
+        ''' creates the question when the data is provided '''
+        question = data
+        question['_id'] = self.counter = self.counter + 1
+        self.questions.append(question)
+        return question
