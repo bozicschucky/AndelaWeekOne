@@ -2,7 +2,6 @@
 from flask import abort
 
 
-
 class DbHandler():
     ''' The oop db class to handle the db operations using oop '''
 
@@ -18,7 +17,7 @@ class DbHandler():
             if question['_id'] == _id:
                 return question
         # return (abort(404, "question {} doesn't exist".format(_id)))
-        return {"message":"question {} doesn't exist".format(_id)}
+        return {"message": "question {} doesn't exist".format(_id)}
 
     def get_all(self):
         ''' Returns all the questions stored in the data structure '''
