@@ -48,3 +48,11 @@ class APITestCase(unittest.TestCase):
         response = self.client().get('/api/v1/questions/40')
         self.assertEqual(response.status_code, 404)
         # self.assertIn('question 40 doesnt exist', str(response.data[4]))
+
+    def tearDown(self):
+        '''teardown configs after running tests '''
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()
