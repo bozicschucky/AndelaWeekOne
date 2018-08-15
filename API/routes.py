@@ -37,3 +37,7 @@ class Question(Resource):
     def get(self, _id):
         ''' Get a given resource/question based on id '''
         return HANDLER.get(_id)
+
+    def delete(self, _id):
+        '''Delete a certain resource/question given an id'''
+        return HANDLER.delete(_id)
