@@ -30,3 +30,9 @@ class DbHandler():
         question['_id'] = self.counter = self.counter + 1
         self.questions.append(question)
         return question
+
+    def answer_question(self, _id, data):
+        ''' Adds an answer to the question created '''
+        answers = {'answer': data}
+        question = self.get(_id)
+        question.update(answers)
