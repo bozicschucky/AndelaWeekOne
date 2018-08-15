@@ -11,6 +11,5 @@ api = Api(app, prefix='/api/v1', version='1.0',
           title='MiniOverFlow', description='Q and A api')
 
 
-@app.route('/hello')
-def welcome():
-    return 'welcomde dude'
+from API.routes import *
+
