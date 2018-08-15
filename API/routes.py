@@ -28,3 +28,12 @@ class AllQuestions(Resource):
     def post(self):
         """ Create a specific question """
         return HANDLER.create(api.payload), 200
+
+
+@api.route('/questions/<int:_id>')
+class Question(Resource):
+    """Shows single items of the resources created"""
+
+    def get(self, _id):
+        ''' Get a given resource/question based on id '''
+        return HANDLER.get(_id)
