@@ -19,3 +19,7 @@ class DbHandler():
                 return question
         # return (abort(404, "question {} doesn't exist".format(_id)))
         return {"message":"question {} doesn't exist".format(_id)}
+
+    def get_all(self):
+        ''' Returns all the questions stored in the data structure '''
+        return self.questions
