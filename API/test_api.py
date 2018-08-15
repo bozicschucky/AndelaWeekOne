@@ -34,3 +34,12 @@ class APITestCase(unittest.TestCase):
         response = self.client().get('/api/v1/questions')
         self.assertEqual(response.status_code, 200)
         self.assertIn('How do i fix bug x', str(response.data))
+
+    def test_can_get_one_question(self):
+        res = self.client().post('/api/v1/questions',
+                                 data=json.dumps(self.mock_data),
+                                 content_type='application/json')
+        self.assertEqual(res.status_code, 200)
+        response = self.client().get('/api/v1/questions/1')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('How do i fix bug x', str(response.data))
