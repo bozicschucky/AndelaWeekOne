@@ -8,13 +8,17 @@ HANDLER = DbHandler()
 
 QUESTION = api.model('Question', {
                      '_id': fields.Integer(readOnly=True,
-                                           description='Question id'),
-                     'question': fields.String(required=True,
-                                               description='The question details')
+                                           description='Question id',min=8),
+                     'question_title': fields.String(required=True,
+                                               description='The question title'),
+                     'question_body': fields.String(required=True,
+                                               description='The question details'),
+                     'date_time': fields.DateTime()
                      })
 
 ANSWER = api.model('Answer', {
-    'Answer': fields.String(required=True, description='The Answer details')
+    'Answer_title': fields.String(required=True, description='The Answer title'),
+    'Answer_body': fields.String(required=True, description='The Answer details')
 })
 
 
@@ -28,9 +32,10 @@ class AllQuestions(Resource):
         return questions
 
     @api.expect(QUESTION)
+    @api.marshal_with(QUESTION, skip_none=True,code=201)
     def post(self):
         """ Create a specific question """
-        return HANDLER.create(api.payload), 200
+        return HANDLER.create(api.payload), 201
 
 
 @api.route('/questions/<int:_id>')
@@ -43,7 +48,8 @@ class Question(Resource):
 
     def delete(self, _id):
         '''Delete a certain resource/question given an id'''
-        return HANDLER.delete(_id)
+        HANDLER.delete(_id)
+        return '',204
 
 
 @api.route('/questions/<int:_id>/answers')
