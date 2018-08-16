@@ -14,7 +14,6 @@ class TestModelsDb(unittest.TestCase):
         self.HANDLER.create({'how i mer your mum': 'i am creating'})
         self.HANDLER.answer_question(1, 'i am adding an answer')
 
-        self.HANDLER.get_all()
 
     def test_get_all_questions(self):
         self.assertEqual(3, len(self.HANDLER.get_all()))
@@ -38,7 +37,6 @@ class TestModelsDb(unittest.TestCase):
                          self.HANDLER.get(2)['answer'])
 
     def tearDown(self):
-        # print(' *** Tearing down the project ***')
         pass
 
 
