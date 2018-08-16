@@ -8,7 +8,7 @@ app.config['TESTING'] = True
 app.config['DEBUG'] = True
 
 api = Api(app, prefix='/api/v1', version='1.0',
-          title='MiniOverFlow', description='Q and A api')
+          title='StackoverFlowLite', description='Q and A api')
 
 
 from API.routes import *
