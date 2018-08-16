@@ -3,7 +3,6 @@ import unittest
 import json
 
 from API.app import app
-from API.models import DbHandler
 
 
 class APITestCase(unittest.TestCase):
