@@ -1,11 +1,14 @@
+''' routes file to handle all api routes '''
+
 from flask_restplus import Resource, fields
-from .app import api, app
+from .app import api
 from .models import DbHandler
 
 HANDLER = DbHandler()
 
 QUESTION = api.model('Question', {
-                     '_id': fields.Integer(readOnly=True, description='Question id'),
+                     '_id': fields.Integer(readOnly=True,
+                                           description='Question id'),
                      'question': fields.String(required=True,
                                                description='The question details')
                      })
