@@ -4,8 +4,8 @@ python:
 install:
     - pip install -r requirements.txt
 script:
-    - cd API/
-    - py.test --cov-report term --cov=API tests/
+   - nosetests --with-coverage --cover-tests
+   - coverage report
 
 
 after_success:
