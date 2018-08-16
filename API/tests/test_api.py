@@ -17,6 +17,9 @@ class APITestCase(unittest.TestCase):
             "_id": 0,
             "question": "How do i fix bug x"
         }
+        self.answer = {
+            'answer': 'I am answering to question 1'
+        }
 
     def test_can_create_question(self):
         ''' Test the post request of creating a question '''
@@ -25,6 +28,14 @@ class APITestCase(unittest.TestCase):
                                  content_type='application/json')
         self.assertEqual(res.status_code, 200)
         self.assertIn('How do i fix bug x', str(res.data))
+
+    def test_can_create_answer_to_question(self):
+        ''' Test if a user can create an answer to a  question '''
+        res = self.client().post('api/v1/questions/1/answers',
+                                 data=json.dumps(self.answer),
+                                 content_type='application/json')
+        print(res.data)
+        self.assertEqual(res.status_code, 200)
 
     def test_get_all_questions(self):
         res = self.client().post('/api/v1/questions',
@@ -43,11 +54,6 @@ class APITestCase(unittest.TestCase):
         response = self.client().get('/api/v1/questions/1')
         self.assertEqual(response.status_code, 200)
         self.assertIn('How do i fix bug x', str(response.data))
-
-    def test_fail_when_wrong_id_passed(self):
-        response = self.client().get('/api/v1/questions/40')
-        # self.assertEqual(response.status_code, 404)
-        self.assertIn('question 40 doesnt exist', str(response.data))
 
     def tearDown(self):
         '''teardown configs after running tests '''
