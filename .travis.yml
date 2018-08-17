@@ -1,0 +1,12 @@
+language: python
+python:
+    - "3.6"
+install:
+    - pip install -r requirements.txt
+script:
+   - cd API
+   - nosetests --with-coverage --cover-package=tests && coverage report
+   
+
+after_success:
+    - coveralls
