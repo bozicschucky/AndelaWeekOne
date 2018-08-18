@@ -31,10 +31,6 @@ class TestModelsDb(unittest.TestCase):
         self.HANDLER.create({'q2': 'create another question'})
         self.assertEqual(5, len(self.HANDLER.get_all()))
 
-    def test_get_create_answer_question(self):
-        self.HANDLER.answer_question(2, 'this is how to fix bug x')
-        self.assertEqual('this is how to fix bug x',
-                         self.HANDLER.get(2)['answer'])
 
     def tearDown(self):
         pass
