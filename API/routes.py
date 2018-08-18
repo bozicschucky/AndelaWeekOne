@@ -21,6 +21,7 @@ ANSWER = api.model('Answer', {
                                   description='The Answer title'),
     'Answer_body': fields.String(required=True,
                                  description='The Answer details'),
+    'Accept_status': fields.Boolean(False),
     'date_time': fields.DateTime()
 })
 
