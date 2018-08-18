@@ -30,11 +30,16 @@ class DbHandler():
         self.questions.append(question)
         return question
 
+    @staticmethod
+    def add_items(a, l=[]):
+        l.append(a)
+        return l
+
     def answer_question(self, _id, data):
         ''' Adds an answer to the question created '''
-        answers = {'answer': data}
         question = self.get(_id)
-        question.update(answers)
+        answers = question.update({'Answers':data})
+        return answers
 
     def delete(self, _id):
         ''' Deletes a question asked on the api '''

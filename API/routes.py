@@ -7,18 +7,21 @@ from .models import DbHandler
 HANDLER = DbHandler()
 
 QUESTION = api.model('Question', {
-                     '_id': fields.Integer(readOnly=True,
-                                           description='Question id',min=8),
-                     'question_title': fields.String(required=True,
-                                               description='The question title'),
-                     'question_body': fields.String(required=True,
-                                               description='The question details'),
-                     'date_time': fields.DateTime()
-                     })
+    '_id': fields.Integer(readOnly=True,
+                          description='Question id', min=8),
+    'question_title': fields.String(required=True,
+                                    description='The question title'),
+    'question_body': fields.String(required=True,
+                                   description='The question details'),
+    'date_time': fields.DateTime()
+})
 
 ANSWER = api.model('Answer', {
-    'Answer_title': fields.String(required=True, description='The Answer title'),
-    'Answer_body': fields.String(required=True, description='The Answer details')
+    'Answer_title': fields.String(required=True,
+                                  description='The Answer title'),
+    'Answer_body': fields.String(required=True,
+                                 description='The Answer details'),
+    'date_time': fields.DateTime()
 })
 
 
@@ -32,7 +35,7 @@ class AllQuestions(Resource):
         return questions
 
     @api.expect(QUESTION)
-    @api.marshal_with(QUESTION, skip_none=True,code=201)
+    @api.marshal_with(QUESTION, skip_none=True, code=201)
     def post(self):
         """ Create a specific question """
         return HANDLER.create(api.payload), 201
@@ -49,7 +52,7 @@ class Question(Resource):
     def delete(self, _id):
         '''Delete a certain resource/question given an id'''
         HANDLER.delete(_id)
-        return '',204
+        return '', 204
 
 
 @api.route('/questions/<int:_id>/answers')
@@ -58,4 +61,5 @@ class QuestionsReply(Resource):
     @api.expect(ANSWER)
     def post(self, _id):
         '''Get a question and reply to it with an Answer '''
-        return HANDLER.answer_question(_id, api.payload), 200
+        data = HANDLER.add_items(api.payload)
+        return HANDLER.answer_question(_id, data), 200

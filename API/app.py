@@ -12,4 +12,3 @@ api = Api(app, prefix='/api/v1', version='1.0',
 
 
 from API.routes import *
-
