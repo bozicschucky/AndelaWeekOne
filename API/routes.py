@@ -63,4 +63,4 @@ class QuestionsReply(Resource):
     def post(self, _id):
         '''Get a question and reply to it with an Answer '''
         data = HANDLER.add_items(api.payload)
-        return HANDLER.answer_question(_id, data), 200
+        return HANDLER.answer_question(_id, data), 201
