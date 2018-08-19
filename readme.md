@@ -35,10 +35,10 @@ StackOverFlow-Lite App is an application that provides users with the ability to
     EndPoint                            | Functionality
     ------------------------            | ----------------------
     GET /questions                      | User can get all questions asked
-    GET /questions/<id>                 | User can a particular question asked
+    GET /questions/id                 | User can a particular question asked
     POST /questions                     | User can create a question
-    POST /questions/<id>/answers        | Create a particular answer to a question
-    DELETE /questions/<id>              | Delete a particular question asked
+    POST /questions/id/answers        | Create a particular answer to a question
+    DELETE /questions/id              | Delete a particular question asked
 
 # How To Manually Test It:
 
