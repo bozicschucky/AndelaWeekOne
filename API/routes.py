@@ -4,9 +4,9 @@ from flask_restplus import Resource, fields
 from .app import api
 from .models import DbHandler
 
-HANDLER = DbHandler()
+handler = DbHandler()
 
-QUESTION = api.model('Question', {
+question = api.model('Question', {
     '_id': fields.Integer(readOnly=True,
                           description='Question id', min=8),
     'question_title': fields.String(required=True,
@@ -16,7 +16,7 @@ QUESTION = api.model('Question', {
     'date_time': fields.DateTime()
 })
 
-ANSWER = api.model('Answer', {
+answer = api.model('Answer', {
     'Answer_title': fields.String(required=True,
                                   description='The Answer title'),
     'Answer_body': fields.String(required=True,
@@ -32,14 +32,14 @@ class AllQuestions(Resource):
 
     def get(self):
         """Get all questions asked """
-        questions = HANDLER.get_all()
+        questions = handler.get_all()
         return questions
 
-    @api.expect(QUESTION)
-    @api.marshal_with(QUESTION, skip_none=True, code=201)
+    @api.expect(question)
+    @api.marshal_with(question, skip_none=True, code=201)
     def post(self):
         """ Create a specific question """
-        return HANDLER.create(api.payload), 201
+        return handler.create(api.payload), 201
 
 
 @api.route('/questions/<int:_id>')
@@ -48,19 +48,19 @@ class Question(Resource):
 
     def get(self, _id):
         ''' Get a given resource/question based on id '''
-        return HANDLER.get(_id)
+        return handler.get(_id)
 
     def delete(self, _id):
         '''Delete a certain resource/question given an id'''
-        HANDLER.delete(_id)
+        handler.delete(_id)
         return '', 204
 
 
 @api.route('/questions/<int:_id>/answers')
 class QuestionsReply(Resource):
     """Reply to a specific question"""
-    @api.expect(ANSWER)
+    @api.expect(answer)
     def post(self, _id):
         '''Get a question and reply to it with an Answer '''
-        data = HANDLER.add_items(api.payload)
-        return HANDLER.answer_question(_id, data), 201
+        data = handler.add_items(api.payload)
+        return handler.answer_question(_id, data), 201
