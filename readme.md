@@ -19,6 +19,7 @@ You can clone the project
    5. [Post Answer ](https://bozicschucky.github.io/AndelaWeekOne/post_answer.html)
    6. [Accept Answer ](https://bozicschucky.github.io/AndelaWeekOne/accept_answer.html)
    7. [Delete Answer ](https://bozicschucky.github.io/AndelaWeekOne/delete.html)
+   8. [User Profile ](https://bozicschucky.github.io/AndelaWeekOne/profile.html)
 
 
 
