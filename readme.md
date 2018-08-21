@@ -53,6 +53,10 @@ StackOverFlow-Lite App is an application that provides users with the ability to
   3. Change branch to `ch-tdd-api-#159804212`:
   
      `git checkout ch-tdd-api-#159804212`
+     `activate a virtual environment`
+     `pip install requirements.txt`
+     `The run the python run.py to run the whole project `
+     `Visit the endpoints descibed above using post man to test the endpoints`
 
 
 
