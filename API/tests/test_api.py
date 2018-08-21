@@ -11,6 +11,7 @@ class APITestCase(unittest.TestCase):
     def setUp(self):
         ''' Intial variable to use for the app '''
         self.app = app
+        self.app.config['TESTING'] = True
         self.client = self.app.test_client
         self.mock_data = {
             "_id": 1,
@@ -33,7 +34,7 @@ class APITestCase(unittest.TestCase):
         res = self.client().post('api/v1/questions/1/answers',
                                  data=json.dumps(self.answer),
                                  content_type='application/json')
-        self.assertEqual(res.status_code, 200)
+        self.assertEqual(res.status_code, 201)
 
     def test_get_all_questions(self):
         res = self.client().post('/api/v1/questions',
