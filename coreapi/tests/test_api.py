@@ -2,7 +2,7 @@ import unittest
 
 import json
 
-from API.app import app
+from coreapi.app import app
 
 
 class APITestCase(unittest.TestCase):

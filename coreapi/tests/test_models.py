@@ -1,5 +1,5 @@
 import unittest
-from API.models import DbHandler
+from coreapi.models import DbHandler
 
 
 class TestModelsDb(unittest.TestCase):

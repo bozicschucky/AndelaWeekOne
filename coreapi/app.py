@@ -10,4 +10,4 @@ api = Api(app, prefix='/api/v1', version='1.0',
           title='StackoverFlowLite', description='Q and A api')
 
 
-from API.routes import *
+from coreapi.routes import *
