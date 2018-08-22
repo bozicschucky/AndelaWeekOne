@@ -38,7 +38,7 @@ class DbHandler():
     def answer_question(self, _id, data):
         ''' Adds an answer to the question created '''
         question = self.get(_id)
-        answers = question.update({'Answers':data})
+        answers = question.update({'Answers': data})
         return answers
 
     def delete(self, _id):
