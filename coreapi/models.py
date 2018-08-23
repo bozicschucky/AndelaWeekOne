@@ -1,8 +1,42 @@
 ''' creates a db handler class to do crud operations on the API '''
-from flask import abort
 
 
-class DbHandler():
+class Question():
+    ''' Question class '''
+    idCounter = 0
+
+    def __init__(self, title=None, body=None):
+        ''' intiate default values for the class '''
+        self.title = title
+        self.body = body
+        Question.idCounter += 1
+
+    def serialize(self):
+        ''' return json representation of the class '''
+        question = {
+            '_id': Question.idCounter,
+            'question_title': self.title,
+            'question_body': self.body
+        }
+        return question
+
+
+class Answer():
+    ''' Answer class '''
+
+    def __init__(self, answers=[]):
+        ''' instantiate Answer object '''
+        self.answers = answers
+
+    def serialize(self):
+        ''' return json represenatation of the object '''
+        answer = {
+            'answers': self.answers,
+        }
+        return answer
+
+
+class DbHandler(Question, Answer):
     ''' The oop db class to handle the db operations using oop '''
 
     def __init__(self):
@@ -25,20 +59,23 @@ class DbHandler():
 
     def create(self, data):
         ''' creates the question when the data is provided '''
-        question = data
+        question_object = Question
+        data = question_object(data['question_title'], data['question_body'])
+        question = data.serialize()
         question['_id'] = self.counter = self.counter + 1
         self.questions.append(question)
         return question
 
-    @staticmethod
-    def add_items(a, l=[]):
+    def add_items(self, a, l=[]):
         l.append(a)
         return l
 
     def answer_question(self, _id, data):
         ''' Adds an answer to the question created '''
+        answer_object = Answer(data)
         question = self.get(_id)
-        answers = question.update({'Answers': data})
+        answer = answer_object.serialize()
+        answers = question.update({'Answers': answer})
         return answers
 
     def delete(self, _id):
