@@ -82,3 +82,4 @@ class DbHandler(Question, Answer):
         ''' Deletes a question asked on the api '''
         question = self.get(_id)
         self.questions.remove(question)
+
