@@ -5,7 +5,7 @@ class Question():
     ''' Question class '''
     idCounter = 0
 
-    def __init__(self, title, body):
+    def __init__(self, title='title', body='body'):
         ''' intiate default values for the class '''
         self.title = title
         self.body = body
@@ -24,7 +24,7 @@ class Question():
 class Answer():
     ''' Answer class '''
 
-    def __init__(self, title,body):
+    def __init__(self, title='title',body='body'):
         ''' instantiate Answer object '''
         self.title = title
         self.body = body 
