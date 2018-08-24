@@ -9,7 +9,7 @@ handler = DbHandler()
 
 question = api.model('Question', {
     '_id': fields.Integer(readOnly=True,
-                          description='Question id', min=8),
+                          description='Question id'),
     'question_title': fields.String(required=True,
                                     description='The question title', min_length=10),
 
