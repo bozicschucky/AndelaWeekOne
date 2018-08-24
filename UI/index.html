@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>welcome Home</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="index.html">MiniOverFlow</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="post.html">Create</a></li>
+            <li><a href="delete.html">Delete</a></li>
+            <li id="" class="signout"><a href="login.html">Signout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <form action="" class="main-form">
+            <div class="question">
+                <h1 class="question_title">Question 4</h1>
+                <p>How do i fix bug x</p>
+                <p>
+                I have this tail recursive function here:
+                def fib(n, sum):
+                    if n < 1:
+                        return sum
+                    else:
+                        return fib(n-1, sum+n)
+
+                c = 998
+                print(fib(c, 0))
+                It works up to n=997, then it just breaks and spits a "maximum recursion depth exceeded in comparison" RuntimeError. Is this just a stack overflow? Is there a way to get around it?
+                </p>
+                </div>
+                <div class="answer">
+                    <form action="">
+                        <!-- <input type="text" placeholder="Enter Answer"> -->
+                        <textarea name="Enter Answer" id="" cols="70" rows="6" placeholder="Submit Answer to question"></textarea>
+                    </form>
+                    <button class="btn">Submit</button>
+                    <h2 class="Answers-header">Answers</h2>
+                    <div class="posted_anwsers">
+                        <p>It is a guard against a stack overflow, yes. Python (or rather, the CPython implementation) doesn't optimize tail recursion, and unbridled recursion causes stack overflows. You can change the recursion limit with sys.setrecursionlimit, but doing so is dangerous -- the standard limit is a little conservative, but Python stackframes can be quite big.</p>
+                        <div class="">
+                            <button type="button" class="upvote">upvote</button>
+                            <button type="button" class="downvote">downvote</button>
+                        </div>
+                    </div>
+                    <div class="posted_anwsers">
+                        <p>Looks like you just need to set a higher recursion depth sys.setrecursionlimit(1500)</p>
+                        <div class="">
+                            <button type="button" class="upvote">upvote</button>
+                            <button type="button" class="downvote">downvote</button>
+                        </div>
+                    </div>
+
+                    <div class="posted_anwsers">
+                        <p>Python isn't a functional language and tail recursion is not a particularly efficient technique. Rewriting the algorithm iteratively, if possible, is generally a better idea..</p>
+                        <div class="">
+                            <button type="button" class="upvote">upvote</button>
+                            <button type="button" class="downvote">downvote</button>
+                        </div>
+                    </div>
+
+                    <div class="posted_anwsers">
+                        <p>Python (or rather, the CPython implementation) doesn't optimize tail recursion, and unbridled recursion causes stack overflows. </p>
+                        <div class="">
+                            <button type="button" class="upvote">upvote</button>
+                            <button type="button" class="downvote">downvote</button>
+                        </div>
+                    </div>
+
+                    <div class="posted_anwsers">
+                        <p>It's to avoid a stack overflow. The Python interpreter limits the depths of recursion to help you avoid infinite recursions, resulting in stack overflows. Try increasing the recursion limit (sys.setrecursionlimit) or re-writing your code without recursion.</p>
+                        <div class="">
+                            <button type="button" class="upvote">upvote</button>
+                            <button type="button" class="downvote">downvote</button>
+                        </div>
+                    </div>
+
+                   
+                </div>
+        </form>
+    </main>
+</body>
+</html>
