@@ -9,18 +9,19 @@ handler = DbHandler()
 
 question = api.model('Question', {
     '_id': fields.Integer(readOnly=True,
-                          description='Question id', min=8),
+                          description='Question id'),
     'question_title': fields.String(required=True,
-                                    description='The question title',min=10),
+                                    description='The question title', min_length=10),
+
     'question_body': fields.String(required=True,
-                                   description='The question details',min=10)
+                                   description='The question details', min_length=10)
 })
 
 answer = api.model('Answer', {
     'Answer_title': fields.String(required=True,
-                                  description='The Answer title'),
+                                  description='The Answer title', min_length=10),
     'Answer_body': fields.String(required=True,
-                                 description='The Answer details'),
+                                 description='The Answer details', min_length=10)
 })
 
 
@@ -33,13 +34,11 @@ class AllQuestions(Resource):
         questions = handler.get_all()
         return questions
 
-    @api.expect(question)
+    @api.expect(question, validate=True)
     @api.marshal_with(question, skip_none=True, code=201)
     def post(self):
         """ Create a specific question """
         data = api.payload
-        if len(data['question_title']) < 4 or len(data['question_body']) < 3:
-            return {'message': 'Answer Title and Body can\'t be blank'}, 400
         return handler.create(data), 201
 
 
@@ -60,14 +59,11 @@ class Question(Resource):
 @api.route('/questions/<int:_id>/answers')
 class QuestionsReply(Resource):
     """Reply to a specific question"""
-    @api.expect(answer)
-    @api.marshal_with(answer,skip_none=True, code=201)
+    @api.expect(answer, validate=True)
+    @api.marshal_with(answer, skip_none=True, code=201)
     def post(self, _id):
         '''Get a question and reply to it with an Answer '''
         # data = handler.add_items(api.payload)
         data = api.payload
-        if len(data['Answer_title']) < 4 or len(data['Answer_body']) < 3:
-            return {'message': 'Answer Title and Body can\'t be blank'}, 400
-        # return handler.answer_question(_id, data), 201
         handler.answer_question(_id, data)
         return {'message': 'answer created for  question {}'.format(_id)}, 201
