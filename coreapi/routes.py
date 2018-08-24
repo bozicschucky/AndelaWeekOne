@@ -11,9 +11,9 @@ question = api.model('Question', {
     '_id': fields.Integer(readOnly=True,
                           description='Question id', min=8),
     'question_title': fields.String(required=True,
-                                    description='The question title'),
+                                    description='The question title',min=10),
     'question_body': fields.String(required=True,
-                                   description='The question details')
+                                   description='The question details',min=10)
 })
 
 answer = api.model('Answer', {
@@ -21,8 +21,6 @@ answer = api.model('Answer', {
                                   description='The Answer title'),
     'Answer_body': fields.String(required=True,
                                  description='The Answer details'),
-    'Accept_status': fields.Boolean(False),
-    'date_time': fields.DateTime()
 })
 
 
@@ -40,6 +38,8 @@ class AllQuestions(Resource):
     def post(self):
         """ Create a specific question """
         data = api.payload
+        if len(data['question_title']) < 4 or len(data['question_body']) < 3:
+            return {'message': 'Answer Title and Body can\'t be blank'}, 400
         return handler.create(data), 201
 
 
@@ -61,10 +61,13 @@ class Question(Resource):
 class QuestionsReply(Resource):
     """Reply to a specific question"""
     @api.expect(answer)
+    @api.marshal_with(answer,skip_none=True, code=201)
     def post(self, _id):
         '''Get a question and reply to it with an Answer '''
         # data = handler.add_items(api.payload)
         data = api.payload
+        if len(data['Answer_title']) < 4 or len(data['Answer_body']) < 3:
+            return {'message': 'Answer Title and Body can\'t be blank'}, 400
         # return handler.answer_question(_id, data), 201
         handler.answer_question(_id, data)
         return {'message': 'answer created for  question {}'.format(_id)}, 201
