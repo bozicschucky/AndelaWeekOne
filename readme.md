@@ -60,7 +60,7 @@ StackOverFlow-Lite App is an application that provides users with the ability to
       * Visit the endpoints descibed above using post man to test the endpoints
   
 
-For the UI
+# For the UI
 
 You can clone the project
 `git clone https://github.com/bozicschucky/AndelaWeekOne.git`
