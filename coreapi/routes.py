@@ -63,7 +63,8 @@ class QuestionsReply(Resource):
     @api.expect(answer)
     def post(self, _id):
         '''Get a question and reply to it with an Answer '''
-        data = handler.add_items(api.payload)
+        # data = handler.add_items(api.payload)
+        data = api.payload
         # return handler.answer_question(_id, data), 201
         handler.answer_question(_id, data)
         return {'message': 'answer created for  question {}'.format(_id)}, 201

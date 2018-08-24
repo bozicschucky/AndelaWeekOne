@@ -24,16 +24,20 @@ class Question():
 class Answer():
     ''' Answer class '''
 
-    def __init__(self, answers=[]):
+    def __init__(self, title,body):
         ''' instantiate Answer object '''
-        self.answers = answers
+        self.title = title
+        self.body = body 
+        
 
     def serialize(self):
         ''' return json represenatation of the object '''
         answer = {
-            'answers': self.answers,
+            'answer_title': self.title,
+            'answer_body': self.body,
         }
         return answer
+
 
 
 class DbHandler(Question, Answer):
@@ -72,10 +76,11 @@ class DbHandler(Question, Answer):
 
     def answer_question(self, _id, data):
         ''' Adds an answer to the question created '''
-        answer_object = Answer(data)
+        answer_object = Answer(data['Answer_title'],data['Answer_body'])
         question = self.get(_id)
         answer = answer_object.serialize()
-        answers = question.update({'Answers': answer})
+        answers = self.add_items(answer)
+        answers = question.update({'Answer': answer})
         return answers
 
     def delete(self, _id):
